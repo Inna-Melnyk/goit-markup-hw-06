@@ -845,14 +845,27 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.registration-form-agreement {
+.checkbox-text {
   padding-left: 24px;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
   color: #757575;
 }
-.registration-form-agreement::after {
+.registration-form-agreement {
+  
+}
+.checkbox-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background-origin: border-box;
+  opacity: 0;
+
+  transition: opacity var(--trans-dur) var(--trans-timing-func);
+}
+.checkbox-text::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -863,14 +876,15 @@ img {
 
   border: 1.25px solid #2e2f42;
   border-radius: 2px;
+  transition: background-color var(--trans-dur) var(--trans-timing-func),
+    border-color var(--trans-dur) var(--trans-timing-func);
 }
-.registration-form-checkbox:checked + .registration-form-agreement::after {
+.registration-form-checkbox:checked + .checkbox-text::after {
   background-color: var(--color-accent-active);
-  background-image: url(../images/checkbox.svg);
-  background-size: contain;
-  background-origin: border-box;
-
   border-color: var(--color-accent-active);
+}
+.registration-form-checkbox:checked ~ .checkbox-icon {
+  opacity: 1;
 }
 .privacy {
   font-size: 12px;

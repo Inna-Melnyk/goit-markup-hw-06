@@ -651,18 +651,22 @@
               ></textarea>
             </div>
 
-            <div class="registration-form-checkbox-field">
+            <label class="registration-form-checkbox-field">
               <input
                 class="registration-form-checkbox"
                 type="checkbox"
                 name="privacy_policy"
                 id="user_policy"
               />
-              <label class="registration-form-agreement" for="user_policy"
-                >I accept the terms and conditions of the
-                <a class="privacy" href="">Privacy Policy</a></label
-              >
-            </div>
+              
+              <span class="checkbox-text">I accept the terms and conditions of the <a class="privacy" href="#"> Privacy Policy</a></span>
+
+              <span class="checkbox-icon">
+               <svg class="icon" width="16" height="16">
+                  <use href="./images/icons.svg#checkbox"></use>
+                </svg>
+              </span>
+            </label>
 
             <button class="registration-form-button" type="submit">Send</button>
           </div>
